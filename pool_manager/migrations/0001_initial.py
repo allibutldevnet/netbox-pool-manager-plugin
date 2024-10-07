@@ -9,10 +9,7 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-        ('extras', '0072_created_datetimefield'),
-        ('ipam', '0057_created_datetimefield'),
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
