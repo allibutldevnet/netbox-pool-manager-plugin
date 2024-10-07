@@ -1,11 +1,11 @@
-from netbox.plugins import PluginConfig
+from extras.plugins import PluginConfig
 
-class NetboxDataConfig(PluginConfig):
-    name = 'pool_manager'
+class PoolManagerConfig(PluginConfig):
+    name = 'netbox_pool_manager'
     verbose_name = 'Pool Manager'
     description = 'Simple pool manager'
-    version = '0.1'
+    version = '1.0.3'
     base_url = 'pool-manager'
-    min_version = '3.4.0'
+    min_version = '4.0.9'
 
-config = NetboxDataConfig
+config = PoolManagerConfig
