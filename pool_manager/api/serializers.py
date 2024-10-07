@@ -17,6 +17,7 @@ class NestedPoolSerializer(WritableNestedSerializer):
     class Meta:
         model = Pool
         fields = ('id', 'url', 'display', 'name', 'description', 'range', 'algorithm')
+        brief_fields = ('id','url','display','name','description')
 
 
 class PoolSerializer(NetBoxModelSerializer):
@@ -29,6 +30,7 @@ class PoolSerializer(NetBoxModelSerializer):
         model = Pool
         fields = ('id', 'url', 'name', 'description', 'range', 'algorithm', 'lease_count',
             'created', 'last_updated',)
+        brief_fields = ('id','url','display','name','description','lease_count')
     
     def __init__(self, *args, **kwargs):
         kwargs['partial'] = True
@@ -79,6 +81,8 @@ class PoolLeaseSerializer(NetBoxModelSerializer):
             'id', 'url', 'display', 'pool', 'requester_id', 'requester_details',
             'range_number', 'tag', 'created', 'last_updated',
         )
+
+        brief_fields = ('id','url','display','pool','requester_id', 'range_number')
         validators = []
 
     def __init__(self, *args, **kwargs):
