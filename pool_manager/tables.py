@@ -23,5 +23,5 @@ class PoolLeaseTable(NetBoxTable):
 
     class Meta(NetBoxTable.Meta):
         model = PoolLease
-        fields = ('pk', 'id', 'requester_id', 'requester_details', 'pool', 'range_number', 'tag', 'actions')
-        default_columns = ('requester_id', 'requester_details', 'pool', 'range_number', 'tag')
+        fields = ('pk', 'id', 'requester_id', 'requester_details', 'pool', 'range_number', 'actions')
+        default_columns = ('requester_id', 'requester_details', 'pool', 'range_number')

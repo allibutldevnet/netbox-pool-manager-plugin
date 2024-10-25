@@ -73,13 +73,12 @@ class PoolLeaseSerializer(NetBoxModelSerializer):
     )
     pool = NestedPoolSerializer()
     range_number = serializers.CharField(required=False)
-    tag = serializers.CharField(required=False)
 
     class Meta:
         model = PoolLease
         fields = (
             'id', 'url', 'display', 'pool', 'requester_id', 'requester_details',
-            'range_number', 'tag', 'created', 'last_updated',
+            'range_number', 'created', 'last_updated',
         )
 
         brief_fields = ('id','url','display','pool','requester_id', 'range_number')

@@ -34,10 +34,7 @@ class PoolLeaseFilterSet(NetBoxModelFilterSet):
     requester_details = MultiValueCharFilter(
         lookup_expr='icontains'
     )
-    tag = MultiValueCharFilter(
-        lookup_expr='icontains'
-    )
 
     class Meta:
         model = PoolLease
-        fields = ('id', 'pool', 'requester_id', 'requester_details', 'tag')
+        fields = ('id', 'pool', 'requester_id', 'requester_details')

@@ -56,17 +56,12 @@ class PoolLeaseViewSet(NetBoxModelViewSet):
     def bulk_destroy(self, request, *args, **kwargs):
         if isinstance(request.data, dict):
             qs = super().get_bulk_destroy_queryset()
-            if 'tag' in request.data:
-                qs = qs.filter(tag=request.data['tag'])
-                super().perform_bulk_destroy(qs)
-
-                return Response(status=status.HTTP_204_NO_CONTENT)
             if 'requester_id' in request.data:
                 qs = qs.filter(requester_id=request.data['requester_id'])
                 super().perform_bulk_destroy(qs)
 
                 return Response(status=status.HTTP_204_NO_CONTENT)
             
-            return Response({'tag': ["This field or requester_id cannot be blank."], 'requester_id': ["This field or tag cannot be blank."]}, status=status.HTTP_400_BAD_REQUEST)
+            return Response({'requester_id': ["This field cannot be blank."]}, status=status.HTTP_400_BAD_REQUEST)
         else:
             return super().bulk_destroy(request, *args, **kwargs)

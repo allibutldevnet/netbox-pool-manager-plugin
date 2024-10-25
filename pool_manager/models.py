@@ -121,11 +121,6 @@ class PoolLease(NetBoxModel):
         blank=False,
         help_text="The range number assigned to the lease in the pool."
     )
-    tag = models.CharField(
-        max_length=200,
-        blank=True,
-        help_text="A tag to categorize the pool lease."
-    )
 
     class Meta:
         ordering = ('pool', 'range_number')

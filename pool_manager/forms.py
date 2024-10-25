@@ -63,7 +63,7 @@ class PoolLeaseAddForm(ModelForm):
 
     class Meta:
         model = PoolLease
-        fields = ('pool', 'requester_id', 'requester_details', 'request_count', 'range_number', 'tag')
+        fields = ('pool', 'requester_id', 'requester_details', 'request_count', 'range_number')
         exclude = ('range_number',)
 
     def clean(self):
@@ -102,7 +102,7 @@ class PoolLeaseForm(ModelForm):
 
     class Meta:
         model = PoolLease
-        fields = ('pool', 'requester_id', 'requester_details', 'range_number', 'tag')
+        fields = ('pool', 'requester_id', 'requester_details', 'range_number')
         exclude = ('range_number',)
 
     def clean(self):
@@ -131,8 +131,5 @@ class PoolLeaseFilterForm(NetBoxModelFilterSetForm):
         required=False
     )
     requester_details = forms.CharField(
-        required=False
-    )
-    tag = forms.CharField(
         required=False
     )
