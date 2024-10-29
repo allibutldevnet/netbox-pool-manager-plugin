@@ -2,7 +2,7 @@ from setuptools import find_packages, setup
 
 setup(
     name='netbox_pool_manager',
-    version='1.0.2',
+    version='1.1.0',
     description='An Pool Manager NetBox plugin',
     install_requires=[],
     packages=find_packages(),
